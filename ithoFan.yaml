@@ -63,6 +63,12 @@ number:
 
 sensor:
   - platform: template
+    name: "${upper_devicename} co2"
+    id: co2_sensor
+    icon: mdi:molecule-co2
+    unit_of_measurement: "ppm"
+    accuracy_decimals: 0
+  - platform: template
     name: "${upper_devicename} humidity"
     id: humidity_sensor
     icon: mdi:water-percent
@@ -74,6 +80,7 @@ sensor:
     icon: mdi:rotate-right
     unit_of_measurement: 'rpm'
     accuracy_decimals: 0
+
 
 # Enable logging
 logger:
