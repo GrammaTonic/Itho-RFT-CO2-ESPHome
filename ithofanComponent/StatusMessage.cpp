@@ -38,47 +38,6 @@ uint16_t StatusMessage::StatusMessage::getCo2() const {
         return 0;
 }
 
-float StatusMessage::getExhaustTemp() const {
-    if (valid())
-        return (float)((uint16_t)contentBytes.at(17) << 8 | contentBytes.at(18)) / 100;
-    else
-        return 0;
-}
-
-float StatusMessage::getSupplyTemp() const {
-    if (valid())
-        return (float)((uint16_t)contentBytes.at(19) << 8 | contentBytes.at(20)) / 100;
-    else
-        return 0;
-}
-
-float StatusMessage::getIndoorTemp() const {
-    if (valid())
-        return (float)((uint16_t)contentBytes.at(21) << 8 | contentBytes.at(22)) / 100;
-    else
-        return 0;
-}
-
-float StatusMessage::getOutdoorTemp() const {
-    if (valid())
-        return (float)((uint16_t)contentBytes.at(23) << 8 | contentBytes.at(24)) / 100;
-    else
-        return 0;
-}
-
-float StatusMessage::getInletFlow() const {
-    if (valid())
-        return (float)((uint16_t)contentBytes.at(35) << 8 | contentBytes.at(36)) / 100;
-    else
-        return 0;
-}
-float StatusMessage::getExhaustFlow() const {
-    if (valid())
-        return (float)((uint16_t)contentBytes.at(37) << 8 | contentBytes.at(38)) / 100;
-    else
-        return 0;
-}
-
 uint8_t StatusMessage::getHumidity() const {
     if (valid())
         return contentBytes.at(15);

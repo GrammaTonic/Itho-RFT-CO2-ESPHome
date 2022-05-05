@@ -109,18 +109,6 @@ uint8_t IthoController::getRpm() const { return rpm; }
 
 uint16_t IthoController::getCo2() const { return co2; }
 
-float IthoController::getExhaustTemp() const { return exhaustTemp; }
-
-float IthoController::getSupplyTemp() const { return supplyTemp; }
-
-float IthoController::getIndoorTemp() const { return indoorTemp; }
-
-float IthoController::getOutdoorTemp() const { return outdoorTemp; }
-
-float IthoController::getInletFlow() const { return inletFlow; }
-
-float IthoController::getExhaustFlow() const { return exhaustsFlow; }
-
 void IthoController::listen() {
     while (radioSerial.available()) {
         if (radioSerial.read() == HEADER_BYTES[headerIndex]) {
@@ -170,12 +158,6 @@ void IthoController::handleStatusMessage(const StatusMessage& message) {
                 fanStatus = message.getFanStatus();
                 timer = message.getRemainingTime();
                 co2 = message.getCo2();
-                exhaustTemp = message.getExhaustTemp();
-                supplyTemp = message.getSupplyTemp();
-                indoorTemp = message.getIndoorTemp();
-                outdoorTemp = message.getOutdoorTemp();
-                inletFlow = message.getInletFlow();
-                exhaustsFlow = message.getExhaustFlow();
                 humidity = message.getHumidity();
                 rpm = message.getRpm();
                 changed();

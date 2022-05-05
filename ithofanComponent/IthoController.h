@@ -22,12 +22,6 @@ public:
     uint16_t getCo2() const;
     uint8_t getHumidity() const;
     uint8_t getRpm() const;
-    float getExhaustTemp() const;
-    float getSupplyTemp() const;
-    float getIndoorTemp() const;
-    float getOutdoorTemp() const;
-    float getInletFlow() const;
-    float getExhaustFlow() const;
     void listen();
 
 private:
@@ -51,10 +45,4 @@ private:
     uint16_t co2 = 0;
     uint8_t humidity = 0;
     uint8_t rpm = 0;
-    float exhaustTemp = 0;
-    float supplyTemp = 0;
-    float indoorTemp = 0;
-    float outdoorTemp = 0;
-    float inletFlow = 0;
-    float exhaustsFlow = 0;
 };

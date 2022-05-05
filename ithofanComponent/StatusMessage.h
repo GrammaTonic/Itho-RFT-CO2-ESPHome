@@ -15,10 +15,4 @@ public:
     uint16_t getCo2() const;
     uint8_t getHumidity() const;
     uint8_t getRpm() const;
-    float getExhaustTemp() const;
-    float getSupplyTemp() const;
-    float getIndoorTemp() const;
-    float getOutdoorTemp() const;
-    float getInletFlow() const;
-    float getExhaustFlow() const;
 };
